@@ -50,7 +50,7 @@ void insert(p_d_list list, t_d_cell cell){
         }
     }
     else{
-        printf("Erreur : Le level de la cellule est supérieur à celui de la list");
+        printf("Erreur : Le niveau de la cellule est supérieur au niveau maximum de la list");
         return;
     }
 }
