@@ -8,7 +8,7 @@
 
 t_d_cell* createCell(int value, int level) {
 
-    p_d_cell newCell = (p_d_list) malloc(sizeof(t_d_cell));
+    p_d_cell newCell = (p_d_cell) malloc(sizeof(t_d_cell));
     if (newCell == NULL) {
         //Si malloc echoue
         return NULL;
@@ -40,7 +40,7 @@ p_d_list createList(int max_level){
     return newList;
 }
 
-void insert(p_d_list list, t_d_cell cell){
+void insertHead(p_d_list list, t_d_cell cell){
     // Vérifie si le niveau d'une cellule par rapport a celui de la liste
     if (cell.level <= list->max_level){
         // Parcours les niveaux de la cellule et créé les heads
