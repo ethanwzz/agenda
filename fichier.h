@@ -28,6 +28,7 @@ p_d_list createList(int);
 
 void insertHead(p_d_list, t_d_cell);
 
+void insertSorted(p_d_list, t_d_cell);
 
 
 #endif //AGENDA_FICHIER_H
