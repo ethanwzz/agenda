@@ -5,6 +5,8 @@
 #ifndef AGENDA_FICHIER_H
 #define AGENDA_FICHIER_H
 
+// Structures :
+
 typedef struct s_d_cell
 {
     int value;
@@ -15,13 +17,15 @@ typedef struct s_d_cell
 typedef struct s_d_list
 {
     int max_level;
-    t_d_cell *head;
+    t_d_cell **heads;
 } t_d_list, *p_d_list;
 
-p_d_cell createCell(int value, int level);
+//Prototype des fonctions :
 
-p_d_list createList(int max_level)
+p_d_cell createCell(int, int);
 
+p_d_list createList(int);
 
+void insert(p_d_list, t_d_cell);
 
 #endif //AGENDA_FICHIER_H
