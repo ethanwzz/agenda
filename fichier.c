@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include "fichier.h"
 
-t_d_cell* createCell(int value, int level) {
+p_d_cell createCell(int value, int level) {
 
     p_d_cell newCell = (p_d_cell) malloc(sizeof(t_d_cell));
     if (newCell == NULL) {
@@ -40,13 +40,13 @@ p_d_list createList(int max_level){
     return newList;
 }
 
-void insertHead(p_d_list list, t_d_cell cell){
+void insertHead(p_d_list list, p_d_cell cell){
     // Vérifie si le niveau d'une cellule par rapport a celui de la liste
-    if (cell.level <= list->max_level){
+    if (cell->level <= list->max_level){
         // Parcours les niveaux de la cellule et créé les heads
-        for (int i = 0; i < cell.level; i++) {
-            cell.next[i] = list->heads[i];
-            list->heads[i] = &cell;
+        for (int i = 0; i < cell->level; i++) {
+            cell->next[i] = list->heads[i];
+            list->heads[i] = cell;
         }
     }
     else{
@@ -54,6 +54,7 @@ void insertHead(p_d_list list, t_d_cell cell){
         return;
     }
 }
+
 
 void insertSorted(p_d_list list, t_d_cell cell) {
     if (cell.level <= list->max_level) {
@@ -77,4 +78,38 @@ void insertSorted(p_d_list list, t_d_cell cell) {
     } else {
         printf("Erreur : Le niveau de la cellule est supérieur à celui de la liste");
     }
+}
+
+//Fonction d'affichage :
+
+void displayCell(p_d_cell cell) {
+    if (cell == NULL) {
+        printf("NULL\n");
+    } else {
+        for (int i = 0; i < cell->level - 1; i++) {
+            if (cell->next[i] != NULL){
+                printf("[%d|@-]-->", cell->value);
+            } else {
+                printf("[%d|@-]-->NULL", cell->value);
+            }
+        }
+    }
+}
+
+void displayList(p_d_list list){
+    for (int i = 0; i < list->max_level; i++){
+        printf("[list head_%d @-]-->", i);
+        displayCell(list->heads[i]);
+        printf("\n");
+    }
+}
+
+void displayLevelList(p_d_list list, int level){
+    if (level > list->max_level | level < 0){
+        printf("Le niveau demande n'est pas valable");
+    } else {
+        printf("[list head_%d @-]-->", level-1);
+        displayCell(list->heads[level-1]);
+    }
+
 }

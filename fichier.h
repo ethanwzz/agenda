@@ -26,9 +26,15 @@ p_d_cell createCell(int, int);
 
 p_d_list createList(int);
 
-void insertHead(p_d_list, t_d_cell);
+void insertHead(p_d_list, p_d_cell);
 
 void insertSorted(p_d_list, t_d_cell);
+
+void displayCell(p_d_cell);
+
+void displayList(p_d_list);
+
+void displayLevelList(p_d_list list, int level);
 
 
 #endif //AGENDA_FICHIER_H
