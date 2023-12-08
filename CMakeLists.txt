@@ -3,4 +3,4 @@ project(agenda C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(agenda main.c fichier.c fichier.h)
+add_executable(agenda main.c list.c list.h cell.c cell.h timer.c)
