@@ -38,8 +38,9 @@ void Partie2(){
     printf("Creation et affichage d'une liste de (2^n) - 1 valeur :\n");
     p_d_list  list = create2squaredlist(3);
     displayAlignedList(list);
+    printf("\n--------------------------------------------------------------------\n\n");
 
-    printf("On va maintenant rechercher la valeur 7 normalement puis la valeur 8 a l'aide de la dichotomie dans cette liste\n\n");
+    printf("On va maintenant rechercher la valeur 7 normalement puis la valeur 8 a l'aide de la dichotomie dans cette liste :\n\n");
     for (int val = 7; val <= 8; ++val){
         if (searchValueLevel0(list, val)){
             printf("La valeur %d est dans la liste\n", val);
