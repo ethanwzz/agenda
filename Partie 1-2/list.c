@@ -64,38 +64,7 @@ void insertSorted(p_d_list list, p_d_cell cell) {
 }
 
 
-/*void create2squaredlist(int n) {
-    int num_cell = pow(2, n) - 1;
-
-    // Création de la liste
-    p_d_list list = createList(n);
-
-    // Création de la liste à niveaux
-    for (int i = 1; i <= num_cell; ++i) {
-        p_d_cell cell;
-        if (i % 2 == 0) {
-            int level = 0;
-            for (int j = 1; j <= i; j *= 2) {
-                level += 1;
-            }
-            cell = createCell(i, level);
-        } else {
-            cell = createCell(i, 1); // Si le chiffre est impair, le niveau est 1
-        }
-        insertSorted(list, cell);
-
-        // Ajout d'impressions de débogage
-        printf("Inserted cell: value=%d, level=%d\n", cell->value, cell->level);
-        displayAlignedList(list); // Affiche la liste après chaque insertion
-        printf("\n");
-    }
-
-    // Affichage final de la liste à niveaux
-    printf("Final aligned list:\n");
-    displayAlignedList(list);
-}*/
-
-p_d_list create2squaredlist(int n) {
+p_d_list create2Squarelist(int n) {
     p_d_list list = createList(n);
     int number_of_cell = (int)pow(2, n) - 1;
     for (int i = 0; i < n; i++){
@@ -191,8 +160,6 @@ void displayList(p_d_list list){
         printf("\n");
     }
 }
-
-#include <stdio.h>
 
 // Fonction pour imprimer un caractère plusieurs fois
 void print_n_times_char(char c, int n) {
